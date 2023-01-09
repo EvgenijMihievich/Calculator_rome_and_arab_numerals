@@ -39,7 +39,6 @@ func searchRomenumerals(a, operator, b string) {
 			fmt.Println("Калькулятор принимает на вход только числа от 1 до 10 включительно")
 			return
 		}
-
 	}
 
 	if num1 == 0 || num2 == 0 {
@@ -47,8 +46,13 @@ func searchRomenumerals(a, operator, b string) {
 		return
 	}
 
-	if num1 < num2 {
+	if num1 < num2 && operator == "-" {
 		fmt.Println("Ошибка, так как в римской системе нет отрицательных чисел")
+		return
+	}
+
+	if num1 < num2 && operator == "/" {
+		fmt.Println("Не делится")
 		return
 	}
 
@@ -114,6 +118,3 @@ func arabCalc(a, operator, b string) {
 		fmt.Println("Калькулятор принимает на вход только операторы + - * /")
 	}
 }
-
-// 	fmt.Println("Вывод ошибки, так как используются одновременно разные системы счисления.")
-// }
